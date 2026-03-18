@@ -2,6 +2,7 @@ package com.peekaboo.user.dto;
 
 public class LoginResponseDto {
 
+    private String token;
     private String message;
     private String email;
     private String role;
@@ -9,10 +10,15 @@ public class LoginResponseDto {
     public LoginResponseDto() {
     }
 
-    public LoginResponseDto(String message, String email, String role) {
+    public LoginResponseDto(String token, String message, String email, String role) {
+        this.token = token;
         this.message = message;
         this.email = email;
         this.role = role;
+    }
+
+    public String getToken() {
+        return token;
     }
 
     public String getMessage() {
@@ -25,6 +31,10 @@ public class LoginResponseDto {
 
     public String getRole() {
         return role;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public void setMessage(String message) {
